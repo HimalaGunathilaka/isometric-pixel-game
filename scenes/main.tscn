@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckkxuw0k4qt35"]
+
+[ext_resource type="PackedScene" uid="uid://bu0nq44tq6lt1" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://gmkhdnuvl5xs" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dbpbym73pawg2" path="res://scenes/grass.tscn" id="2_0wfyh"]
+
+[node name="main" type="Node2D" unique_id=1244959665]
+y_sort_enabled = true
+script = ExtResource("1_sugp2")
+
+[node name="Player" parent="." unique_id=185698475 groups=["player"] instance=ExtResource("1_o5qli")]
+position = Vector2(495, 175)
+
+[node name="Grass" parent="." unique_id=1919617065 instance=ExtResource("2_0wfyh")]
+position = Vector2(444, 359)
+
+[node name="Grass2" parent="." unique_id=187431259 instance=ExtResource("2_0wfyh")]
+position = Vector2(583, 359)
+
+[node name="Grass3" parent="." unique_id=539153438 instance=ExtResource("2_0wfyh")]
+position = Vector2(678, 325)

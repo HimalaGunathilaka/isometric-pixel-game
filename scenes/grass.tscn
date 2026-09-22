@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dbpbym73pawg2"]
+
+[ext_resource type="Texture2D" uid="uid://d0gh6u2worwg8" path="res://sprites/grass/frame0000.png" id="1_sj11k"]
+[ext_resource type="Script" uid="uid://bpyavhsfu4n4g" path="res://scripts/grass.gd" id="1_u7wuo"]
+[ext_resource type="Texture2D" uid="uid://dot6638hskk4l" path="res://sprites/grass/frame0001.png" id="2_u7wuo"]
+[ext_resource type="Texture2D" uid="uid://bvadt5215r6v6" path="res://sprites/grass/frame0002.png" id="3_kog0m"]
+[ext_resource type="Texture2D" uid="uid://dta8raq74doqm" path="res://sprites/grass/frame0003.png" id="4_esugc"]
+[ext_resource type="Texture2D" uid="uid://cohnip5oxltmj" path="res://sprites/grass/frame0004.png" id="5_j6x2i"]
+[ext_resource type="Texture2D" uid="uid://ceeo1svve8dg" path="res://sprites/grass/frame0005.png" id="6_neahd"]
+[ext_resource type="Texture2D" uid="uid://dix16rsfyimwy" path="res://sprites/grass/frame0006.png" id="7_kju01"]
+[ext_resource type="Texture2D" uid="uid://crgqqe3cj5gjg" path="res://sprites/grass/frame0007.png" id="8_agu3c"]
+[ext_resource type="Texture2D" uid="uid://byvk5etr6j0uv" path="res://sprites/grass/frame0008.png" id="9_8fxrl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ew32"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sj11k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u7wuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kog0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_esugc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j6x2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_neahd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kju01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_agu3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8fxrl")
+}],
+"loop": 0,
+"name": &"decay",
+"speed": 2.0
+}]
+
+[node name="Grass" type="Node2D" unique_id=2051963749]
+position = Vector2(0, 50)
+script = ExtResource("1_u7wuo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=412529410]
+texture_filter = 1
+position = Vector2(0, -50)
+sprite_frames = SubResource("SpriteFrames_0ew32")
+animation = &"decay"
+offset = Vector2(0, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=856047309]
+texture_filter = 1
+position = Vector2(0, -50)
+texture = ExtResource("1_sj11k")
+offset = Vector2(0, 50)
