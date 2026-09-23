@@ -179,12 +179,13 @@ animations = [{
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=573042171 groups=["player"]]
-position = Vector2(0, 37)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_0ew32")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1724241604]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3vyb7")
 animation = &"E"
+offset = Vector2(0, -47)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=993269766]
