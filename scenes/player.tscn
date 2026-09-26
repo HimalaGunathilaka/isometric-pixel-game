@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://b1qpc8ns5pcew" path="res://sprites/player/W/frame0000.png" id="31_nubpm"]
 [ext_resource type="Texture2D" uid="uid://bjh16brqxxvgs" path="res://sprites/player/W/frame0003.png" id="32_ua5cf"]
 [ext_resource type="Texture2D" uid="uid://8mm3n0bymu0d" path="res://sprites/player/W/frame0002.png" id="33_51ujp"]
+[ext_resource type="AudioStream" uid="uid://bh8dfn06to4fd" path="res://sounds/Footsteps.wav" id="34_md1ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ew32"]
 
@@ -189,3 +190,6 @@ animation = &"E"
 offset = Vector2(0, -47)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=993269766]
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="." unique_id=289548156]
+stream = ExtResource("34_md1ol")

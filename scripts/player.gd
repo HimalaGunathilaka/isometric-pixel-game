@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var footsteps: AudioStreamPlayer = $Footsteps
 var SPEED: int = 200
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -18,6 +19,7 @@ func _physics_process(delta: float) -> void:
 		"ui_up",
 		"ui_down"
 	)
+	
 
 	if velocity == Vector2(0,0):
 		animated_sprite_2d.frame = 0
@@ -25,8 +27,16 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED
 	move_and_slide()
 
+	handle_footsteps(direction)
 	start_animation(direction)
-
+	
+func handle_footsteps(direction:Vector2)->void:
+	if direction != Vector2.ZERO:
+		if not footsteps.playing:
+			footsteps.play()
+	else:
+		if footsteps.playing:
+			footsteps.stop()
 
 func start_animation(direction: Vector2) -> void:
 	if direction == Vector2.ZERO:

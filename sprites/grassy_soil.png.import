@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqdv5kmqulrsy"
-path="res://.godot/imported/sprite_sheet.png-6b8eba4f0a77e8e70fc0462c137037a5.ctex"
+uid="uid://bpit0pdkc6icu"
+path="res://.godot/imported/grassy_soil.png-1ebaf237ff838074a7409bae314f8e8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sprite_sheet.png"
-dest_files=["res://.godot/imported/sprite_sheet.png-6b8eba4f0a77e8e70fc0462c137037a5.ctex"]
+source_file="res://sprites/grassy_soil.png"
+dest_files=["res://.godot/imported/grassy_soil.png-1ebaf237ff838074a7409bae314f8e8c.ctex"]
 
 [params]
 

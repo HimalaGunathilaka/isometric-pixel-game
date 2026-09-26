@@ -1,7 +1,8 @@
 extends Node2D
 
 const GRASS = preload("uid://dbpbym73pawg2")
-@onready var player: CharacterBody2D = $Player
+#@onready var player: CharacterBody2D = $Player
+@onready var enemy: CharacterBody2D = $Enemy
 
 var rng = RandomNumberGenerator.new()
 var hash_map = Dictionary()
@@ -20,10 +21,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not player:
+	if not enemy:
 		return
-	var x = int(player.position.x) / hash_size 
-	var y = int(player.position.y) / hash_size
+	var x = int(enemy.position.x) / hash_size 
+	var y = int(enemy.position.y) / hash_size
 	
 	new_position = Vector2i(x,y)
 	
