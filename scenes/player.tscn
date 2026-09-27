@@ -193,3 +193,6 @@ offset = Vector2(0, -47)
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="." unique_id=289548156]
 stream = ExtResource("34_md1ol")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1223722553]
+current = true
