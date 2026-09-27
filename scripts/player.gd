@@ -5,6 +5,7 @@ var SPEED: int = 200
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+var game_over:bool = false
 
 func _ready() -> void:
 	pass
@@ -12,6 +13,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	#look_at(get_global_mouse_position())
+	
+	if game_over:
+		return
 
 	var direction: Vector2 = Input.get_vector(
 		"ui_left",
@@ -77,3 +81,8 @@ func start_animation(direction: Vector2) -> void:
 	elif angle >= -3 * PI / 8 and angle < -PI / 8:
 		# Up-right
 		animated_sprite_2d.play("NE")
+
+func die()->void:
+	if animated_sprite_2d.animation != "death" or game_over:
+		game_over = true
+		animated_sprite_2d.animation = "death"

@@ -33,7 +33,18 @@
 [ext_resource type="Texture2D" uid="uid://b1qpc8ns5pcew" path="res://sprites/player/W/frame0000.png" id="31_nubpm"]
 [ext_resource type="Texture2D" uid="uid://bjh16brqxxvgs" path="res://sprites/player/W/frame0003.png" id="32_ua5cf"]
 [ext_resource type="Texture2D" uid="uid://8mm3n0bymu0d" path="res://sprites/player/W/frame0002.png" id="33_51ujp"]
+[ext_resource type="Texture2D" uid="uid://daoqdsn4o2fjr" path="res://sprites/player/death/frame0000.png" id="34_g5jhy"]
 [ext_resource type="AudioStream" uid="uid://bh8dfn06to4fd" path="res://sounds/Footsteps.wav" id="34_md1ol"]
+[ext_resource type="Texture2D" uid="uid://b6s1gdstgpiao" path="res://sprites/player/death/frame0001.png" id="35_holxr"]
+[ext_resource type="Texture2D" uid="uid://b1dwta2adk7j0" path="res://sprites/player/death/frame0002.png" id="36_mx1m4"]
+[ext_resource type="Texture2D" uid="uid://bb586fc0aa4uc" path="res://sprites/player/death/frame0003.png" id="37_4gjji"]
+[ext_resource type="Texture2D" uid="uid://ba17sortt1ucc" path="res://sprites/player/death/frame0004.png" id="38_u2ulf"]
+[ext_resource type="Texture2D" uid="uid://b0owo7fnt273v" path="res://sprites/player/death/frame0005.png" id="39_6e8lb"]
+[ext_resource type="Texture2D" uid="uid://dhj2hvdgmkvht" path="res://sprites/player/death/frame0006.png" id="40_2gdjj"]
+[ext_resource type="Texture2D" uid="uid://bf6804bp7g8ok" path="res://sprites/player/death/frame0007.png" id="41_sc3ue"]
+[ext_resource type="Texture2D" uid="uid://c85e0is5h6y1e" path="res://sprites/player/death/frame0008.png" id="42_lxlsd"]
+[ext_resource type="Texture2D" uid="uid://c57tr016ji4u4" path="res://sprites/player/death/frame0009.png" id="43_ha2mi"]
+[ext_resource type="Texture2D" uid="uid://dgb1ek4u6nuyj" path="res://sprites/player/death/frame0010.png" id="44_apa73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ew32"]
 
@@ -174,6 +185,44 @@ animations = [{
 "loop": 0,
 "name": &"W",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_g5jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_holxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_mx1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_4gjji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_u2ulf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6e8lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_2gdjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_sc3ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_lxlsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ha2mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_apa73")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=185698475]
@@ -186,7 +235,7 @@ shape = SubResource("RectangleShape2D_0ew32")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1724241604]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3vyb7")
-animation = &"E"
+animation = &"death"
 offset = Vector2(0, -47)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=993269766]

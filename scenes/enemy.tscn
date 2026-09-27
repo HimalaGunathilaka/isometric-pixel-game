@@ -24,4 +24,11 @@ texture = ExtResource("2_4ra3w")
 stream = ExtResource("3_4ra3w")
 pitch_scale = 3.0
 
+[node name="Timer" type="Timer" parent="." unique_id=1301054989]
+wait_time = 10.0
+
+[node name="Timer2" type="Timer" parent="." unique_id=1922988081]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
