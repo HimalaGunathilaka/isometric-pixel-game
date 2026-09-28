@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cg5yxxe7q58sh" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://ccwbsadjqatjo" path="res://sprites/player/E/frame0001.png" id="2_487ah"]
+[ext_resource type="Shader" uid="uid://ial1p4kv8lev" path="res://shaders/blur.gdshader" id="2_holxr"]
+[ext_resource type="Script" uid="uid://cepj51lepht1s" path="res://scripts/game_over.gd" id="2_mx1m4"]
 [ext_resource type="Texture2D" uid="uid://dvmky0tpeg5re" path="res://sprites/player/E/frame0000.png" id="3_md1ol"]
 [ext_resource type="Texture2D" uid="uid://g5uqcjbf68by" path="res://sprites/player/E/frame0003.png" id="4_bj30b"]
 [ext_resource type="Texture2D" uid="uid://c2kdfxyp7fmne" path="res://sprites/player/E/frame0002.png" id="5_jc3p3"]
@@ -45,6 +47,10 @@
 [ext_resource type="Texture2D" uid="uid://c85e0is5h6y1e" path="res://sprites/player/death/frame0008.png" id="42_lxlsd"]
 [ext_resource type="Texture2D" uid="uid://c57tr016ji4u4" path="res://sprites/player/death/frame0009.png" id="43_ha2mi"]
 [ext_resource type="Texture2D" uid="uid://dgb1ek4u6nuyj" path="res://sprites/player/death/frame0010.png" id="44_apa73"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mx1m4"]
+shader = ExtResource("2_holxr")
+shader_parameter/lod = 2.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ew32"]
 
@@ -228,6 +234,44 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=185698475]
 script = ExtResource("1_3vyb7")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1739535743]
+
+[node name="GameOver" type="Control" parent="CanvasLayer" unique_id=434590915]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1149.0
+offset_bottom = 646.0
+script = ExtResource("2_mx1m4")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOver" unique_id=1384106227]
+material = SubResource("ShaderMaterial_mx1m4")
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameOver" unique_id=1541372864]
+layout_mode = 0
+offset_left = 382.5
+offset_top = 237.0
+offset_right = 762.5
+offset_bottom = 416.0
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOver/VBoxContainer" unique_id=1948589277]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Lost to Time"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer/GameOver/VBoxContainer" unique_id=2118502142]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Walk again"
+metadata/_edit_use_anchors_ = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=573042171 groups=["player"]]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_0ew32")
@@ -245,3 +289,7 @@ stream = ExtResource("34_md1ol")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1223722553]
 current = true
+
+[connection signal="pressed" from="CanvasLayer/GameOver/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOver/VBoxContainer/Button" to="CanvasLayer/GameOver" method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

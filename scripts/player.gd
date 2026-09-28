@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var footsteps: AudioStreamPlayer = $Footsteps
+@onready var game_over_menu: Control = $CanvasLayer/GameOver
 var SPEED: int = 200
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -8,6 +9,11 @@ var SPEED: int = 200
 var game_over:bool = false
 
 func _ready() -> void:
+	game_over_menu.visible = false
+	if GameState.player_location == null:
+		GameState.player_location = global_position
+	else:
+		global_position = GameState.player_location
 	pass
 
 
@@ -15,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	#look_at(get_global_mouse_position())
 	
 	if game_over:
+		footsteps.stop()
 		return
 
 	var direction: Vector2 = Input.get_vector(
@@ -86,3 +93,9 @@ func die()->void:
 	if animated_sprite_2d.animation != "death" or game_over:
 		game_over = true
 		animated_sprite_2d.animation = "death"
+		GameState.player_location = global_position
+		
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation == "death":
+		game_over_menu.visible = true
