@@ -17,6 +17,8 @@ var disable_physics:bool = false
 func _ready() -> void:
 	closing.max_distance = MAX_DISTANCE
 	
+	teleport()
+	
 	timer.one_shot = true
 	timer.stop()
 	timer.wait_time = rng.randf_range(0.5,1.5)

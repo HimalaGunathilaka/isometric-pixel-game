@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cf76xc2bkls3c"]
+
+[ext_resource type="Texture2D" uid="uid://dd2bqbvssiyfi" path="res://sprites/poster.png" id="1_jaeev"]
+[ext_resource type="Script" uid="uid://6t6cbboht2xm" path="res://scripts/start.gd" id="1_u80x2"]
+
+[node name="Start" type="Control" unique_id=2095971059]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u80x2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=833057835]
+texture_filter = 1
+position = Vector2(577, 283)
+scale = Vector2(4.4765615, 4.4765615)
+texture = ExtResource("1_jaeev")
+
+[node name="Button" type="Button" parent="." unique_id=338226013]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 400.0
+offset_right = 727.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 64
+text = "Walk"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
